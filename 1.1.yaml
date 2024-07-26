@@ -4,8 +4,8 @@ proxy-providers-dingyue: &airports
     type: http
     interval: 3600
     path: ./gfwairport3.yaml
-    url: https://ooicat.com.co/link/JJhl54nyBc46lBd0?sub=3&extend=1
-    exclude-filter: "-10倍|剩余流量|套餐到期"
+    url: https://ooicat.com.co/link/JJhl54nyBc46lBd0?sub=3&extend=1|https://tannel0704.xn--wqr30o34q.xn--io0a7i/link/Fk7Kvjbhyg91AGR2?clash=1
+    exclude-filter: "北京时间|剩余流量|过期时间|网站地址"
     health-check:
       enable: true
       url: https://www.google.com/generate_204
@@ -397,7 +397,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use: *proxy-providers-use
-    filter: (?i)香港|香江|Hong Kong|HK|🇭🇰|Hongkong
+    filter: (?i)香港香江Hong KongHK🇭🇰Hongkong
 
   - name: 🇯🇵 日本节点
     type: url-test
