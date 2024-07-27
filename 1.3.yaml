@@ -142,7 +142,31 @@ proxy-providers: *airports
 proxies: #节点添加到这里
   - {"name":"住宅1","server":"188.191.99.223","port":"2333","type":"socks5","username":"caonimadebi","password":"nimalegebi2","udp":true}
 proxy-groups:
-  - name: 策略1
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use: *proxy-providers-use
+
+  - name: 🚀 手动切换
+    type: select
+    use: *proxy-providers-use    
+    
+  - name: iPhonexs103
     type: select
     use: *proxy-providers-use
       
@@ -182,36 +206,14 @@ proxy-groups:
     type: select
     use: *proxy-providers-use
     
-  - name: 🚀 节点选择
-    type: select
-    proxies:
-      - 🚀 手动切换
-      - ♻️ 自动选择
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇰🇷 韩国节点
-      - DIRECT
 
-  - name: 🚀 手动切换
-    type: select
-    use: *proxy-providers-use
-
-  - name: ♻️ 自动选择
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    use: *proxy-providers-use
 
   - name: 📲 电报消息
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
@@ -219,12 +221,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+      
   - name: 💬 OpenAi
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
@@ -232,12 +235,13 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+      
   - name: 📹 油管视频
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
@@ -245,13 +249,14 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+      
   - name: 🎥 奈飞视频
     type: select
     proxies:
       - 🎥 奈飞节点
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
@@ -259,6 +264,7 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+      
   - name: 📺 巴哈姆特
     type: select
     proxies:
@@ -266,12 +272,14 @@ proxy-groups:
       - 🚀 节点选择
       - 🚀 手动切换
       - DIRECT
+      
   - name: 📺 哔哩哔哩
     type: select
     proxies:
       - 🇨🇳 台湾节点
       - 🇭🇰 香港节点
       - 🎯 全球直连
+      
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -279,21 +287,23 @@ proxy-groups:
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+      
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -301,11 +311,12 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: Ⓜ️ 微软Bing
     type: select
     proxies:
@@ -313,11 +324,12 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: Ⓜ️ 微软云盘
     type: select
     proxies:
@@ -325,11 +337,12 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -337,23 +350,26 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
+      - DIRECT  
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: 🎮 游戏平台
     type: select
     proxies:
@@ -361,46 +377,46 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
+      - 🇸🇬 新加坡节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - 🎯 全球直连
+      
   - name: 🎶 网易音乐
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
       - ♻️ 自动选择
+      
   - name: 🛑 广告拦截
     type: select
     proxies:
       - REJECT
       - DIRECT
+      
   - name: 🍃 应用净化
     type: select
     proxies:
       - REJECT
       - DIRECT
+      
   - name: 🐟 漏网之鱼
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - 🚀 手动切换      
       - DIRECT
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇰🇷 韩国节点
-      - 🚀 手动切换
+
 
   - name: 🇭🇰 香港节点
     type: url-test
@@ -434,7 +450,7 @@ proxy-groups:
     use: *proxy-providers-use
     filter: (?i)台湾|TW|Taiwan|🇨🇳
 
-  - name: 🇸🇬 狮城节点
+  - name: 🇸🇬 新加坡节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -454,11 +470,16 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-#这里填入链式代理组
-  - {name: ISP节点1, type: relay, proxies: [策略1, 住宅1]}
+
+#链式代理组
+  - {name: 美国ISP节点1, type: relay, proxies: [iPhonexs103, 住宅1]}
+  
 rules:
-  - SRC-IP-CIDR,192.168.168.103/32,ISP节点1   #(这里填写设备ip和链式代理组名称）
-  #- SRC-IP-CIDR,192.168.100.200/32,策略2
+
+#设备ip和链式代理组名称
+  - SRC-IP-CIDR,192.168.168.103/32,美国ISP节点1   #(这里填写设备ip和链式代理组名称）
+  #- SRC-IP-CIDR,192.168.100.200/32,美国ISP节点2
+  
   - DOMAIN-SUFFIX,cdn.jsdelivr.net,🚀 节点选择
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
   - RULE-SET,UnBan,🎯 全球直连
