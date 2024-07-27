@@ -199,12 +199,12 @@ proxy-groups:
 #TikTok设备中转&链式代理
 
 #1   
-  - name: 🎵 TK-103中转xs
+  - name: 🎵 TK-158中转xs
     type: select
     use: *proxy-providers-use
     filter: (?i)美国|香港|台湾|新加坡|日本
     
-  - {name: 🎵 TK-103链式xs, type: relay, proxies: [🎵 TK-103中转xs, 188.191.99.223]}  
+  - {name: 🎵 TK-158链式xs, type: relay, proxies: [🎵 TK-158中转xs, 188.191.99.223]}  
 
 #2,以此类推  
   - name: 🎵 TK-159中转Mi11
@@ -354,7 +354,7 @@ proxy-groups:
 rules:
 
 #设备ip和链式代理组名称
-  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-103链式xs   #(这里填写设备ip和链式代理组名称）
+  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-158链式xs   #(这里填写设备ip和链式代理组名称）
   - SRC-IP-CIDR,192.168.168.159/32,🎵 TK-159链式Mi11
   
   - DOMAIN-SUFFIX,cdn.jsdelivr.net,🚀 节点选择
