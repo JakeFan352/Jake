@@ -354,7 +354,7 @@ proxy-groups:
 rules:
 
 #设备ip和链式代理组名称
-  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-158链式xs   #(这里填写设备ip和链式代理组名称）
+  - SRC-IP-CIDR,192.168.168.158/32,🎵 TK-158链式xs   #(这里填写设备ip和链式代理组名称）
   - SRC-IP-CIDR,192.168.168.159/32,🎵 TK-159链式Mi11
   
   - DOMAIN-SUFFIX,cdn.jsdelivr.net,🚀 节点选择
