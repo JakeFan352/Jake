@@ -220,7 +220,7 @@ proxy-groups:
     type: select
     use: *proxy-providers-use
 #链式代理组
-  - {name: 美国ISP节点1, type: relay, proxies: [iPhonexs103, 188.191.99.223]}     
+  - {name: 美国ISP节点1, type: relay, proxies: [🎵 iPhonexs103, 188.191.99.223]}     
       
   - name: 策略2
     type: select
