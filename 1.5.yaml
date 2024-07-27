@@ -144,7 +144,7 @@ proxies:
 
 #socks5节点,住宅地址ISP
   - {"name":"188.191.99.223","server":"188.191.99.223","port":"2333","type":"socks5","username":"caonimadebi","password":"nimalegebi2","udp":true}
-
+  - {"name":"156.233.23.214","server":"156.233.23.214","port":"2333","type":"socks5","username":"caonimadebi","password":"nimalegebi2","udp":true}
 
 proxy-groups:
   - name: 🚀 节点选择
@@ -172,92 +172,50 @@ proxy-groups:
     use: *proxy-providers-use
 
   - name: 🌏 亚洲节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     use: *proxy-providers-use
     filter: (?i)香港|台湾|日本|韩国|朝鲜|蒙古|越南|泰国|柬埔寨|老挝|缅甸|新加坡|马来西亚|菲律宾|印度尼西亚|文莱|东帝汶|孟加拉国|不丹|尼泊尔|斯里兰卡|马尔代夫|哈萨克斯坦|吉尔吉斯斯坦|塔吉克斯坦|乌兹别克斯坦|土库曼斯坦
 
   - name: 🌎 美洲节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     use: *proxy-providers-use
     filter: (?i)加拿大|美国|墨西哥|危地马拉|伯利兹|洪都拉斯|萨尔瓦多|尼加拉瓜|哥斯达黎加|巴拿马|古巴|牙买加|海地|多米尼加共和国|巴哈马|特立尼达和多巴哥|圣卢西亚|安提瓜和巴布达|多米尼克|格林纳达|圣文森特和格林纳丁斯|圣基茨和尼维斯|阿鲁巴|库拉索|圣马丁|英属维尔京群岛|美属维尔京群岛|圣皮埃尔和密克隆|格陵兰|百慕大|福克兰群岛|苏里南|圭亚那|委内瑞拉|哥伦比亚|厄瓜多尔|秘鲁|玻利维亚|巴拉圭|乌拉圭|阿根廷|智利|马尔维纳斯群岛
 
   - name: 🌏 大洋洲节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     use: *proxy-providers-use
     filter: (?i)澳大利亚|新西兰|巴布亚新几内亚|所罗门群岛|瓦努阿图|密克罗尼西亚|马绍尔群岛|帕劳|斐济|汤加|库克群岛|努瓦楠
 
   - name: 🌍 中东节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     use: *proxy-providers-use
     filter: (?i)沙特阿拉伯|伊朗|伊拉克|叙利亚|约旦|黎巴嫩|以色列|巴勒斯坦领土|卡塔尔|阿联酋|阿曼|也门|科威特|巴林|塞浦路斯
 
   - name: 🌍 欧洲节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     use: *proxy-providers-use
     filter: (?i)俄罗斯|德国|法国|英国|意大利|西班牙|波兰|罗马尼亚|荷兰|比利时|捷克|希腊|葡萄牙|瑞典|匈牙利|奥地利|瑞士|保加利亚|丹麦|芬兰|斯洛伐克|爱尔兰|克罗地亚|立陶宛|拉脱维亚|爱沙尼亚|斯洛文尼亚|摩尔多瓦|冰岛|马耳他|安道尔|列支敦士登|摩纳哥|圣马力诺|梵蒂冈
 
-#TikTok设备&链式代理
+#TikTok设备中转&链式代理
 
-#设备中转节点选择    
-  - name: 🎵 TK-103中转
+#1   
+  - name: 🎵 TK-103中转xs
     type: select
     use: *proxy-providers-use
-#链式代理组
-  - {name: 🎵 TK-103链式, type: relay, proxies: [🎵 TK-103中转, 188.191.99.223]}     
-      
-  - name: 策略2
-    type: select
-    use: *proxy-providers-use
+    filter: (?i)美国|香港|台湾|新加坡|日本
     
-  - name: 策略3
-    type: select
-    use: *proxy-providers-use
-  
-  - name: 策略4
-    type: select
-    use: *proxy-providers-use
-  
-  - name: 策略5
-    type: select
-    use: *proxy-providers-use
+  - {name: 🎵 TK-103链式xs, type: relay, proxies: [🎵 TK-103中转xs, 188.191.99.223]}  
 
-  - name: 策略6
+#2,以此类推  
+  - name: 🎵 TK-159中转Mi11
     type: select
     use: *proxy-providers-use
-
-  - name: 策略7
-    type: select
-    use: *proxy-providers-use
-
-  - name: 策略8
-    type: select
-    use: *proxy-providers-use
-
-  - name: 策略9
-    type: select
-    use: *proxy-providers-use
-
-  - name: 策略10
-    type: select
-    use: *proxy-providers-use
+    filter: (?i)美国|香港|台湾|新加坡|日本
     
+  - {name: 🎵 TK-159链式Mi11, type: relay, proxies: [🎵 TK-159中转Mi11, 156.233.23.214]}
+  
 
-
+#其他分流组
   - name: 📲 电报消息
     type: select
     proxies:
@@ -396,8 +354,8 @@ proxy-groups:
 rules:
 
 #设备ip和链式代理组名称
-  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-103链式   #(这里填写设备ip和链式代理组名称）
-  #- SRC-IP-CIDR,192.168.100.200/32,美国ISP节点2
+  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-103链式xs   #(这里填写设备ip和链式代理组名称）
+  - SRC-IP-CIDR,192.168.168.159/32,🎵 TK-159链式Mi11
   
   - DOMAIN-SUFFIX,cdn.jsdelivr.net,🚀 节点选择
   - RULE-SET,LocalAreaNetwork,🎯 全球直连
