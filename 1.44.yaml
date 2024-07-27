@@ -4,7 +4,7 @@ proxy-providers-dingyue: &airports
     type: http
     interval: 66600
     path: ./ooicat.yaml
-    url: https://ooicat.com.co/link/JJhl54nyBc46lBd0?sub=3&extend=1|https://tannel0704.xn--wqr30o34q.xn--io0a7i/link/Fk7Kvjbhyg91AGR2?clash=1
+    url: https://ooicat.com.co/link/JJhl54nyBc46lBd0?sub=3&extend=1
     exclude-filter: "北京时间|剩余流量|过期时间|网站地址"
     health-check:
       enable: true
@@ -36,7 +36,7 @@ allow-lan: true
 mode: rule
 log-level: info
 external-controller: :9090
-ipv6: true
+ipv6: false
 geo-auto-update: true #false&true  是否自动更新GEO
 geo-update-interval: 24  #更新间隔，单位小时
 geox-url:
@@ -49,7 +49,7 @@ dns:
   enable: true
   prefer-h3: true
   listen: 0.0.0.0:53
-  ipv6: true
+  ipv6: false
   default-nameserver: #用于解析DNS服务器域名
     - 223.5.5.5
     - 9.9.9.10
@@ -216,11 +216,11 @@ proxy-groups:
 #TikTok设备&链式代理
 
 #设备中转节点选择    
-  - name: 🎵 iPhonexs103
+  - name: 🎵 TK-103中转
     type: select
     use: *proxy-providers-use
 #链式代理组
-  - {name: 美国ISP节点1, type: relay, proxies: [🎵 iPhonexs103, 188.191.99.223]}     
+  - {name: 🎵 TK-103链式, type: relay, proxies: [🎵 TK-103中转, 188.191.99.223]}     
       
   - name: 策略2
     type: select
@@ -398,7 +398,7 @@ proxy-groups:
 rules:
 
 #设备ip和链式代理组名称
-  - SRC-IP-CIDR,192.168.168.103/32,美国ISP节点1   #(这里填写设备ip和链式代理组名称）
+  - SRC-IP-CIDR,192.168.168.103/32,🎵 TK-103链式   #(这里填写设备ip和链式代理组名称）
   #- SRC-IP-CIDR,192.168.100.200/32,美国ISP节点2
   
   - DOMAIN-SUFFIX,cdn.jsdelivr.net,🚀 节点选择
