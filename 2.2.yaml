@@ -1,4 +1,5 @@
-proxy-providers:  
+proxy-providers-dingyue: &airports
+
   ooicat:
     type: http
     interval: 66600
@@ -20,7 +21,11 @@ proxy-providers:
       enable: true
       url: https://www.google.com/generate_204
       interval: 900
-      
+
+proxy-providers-config:
+  proxy-providers-use: &proxy-providers-use
+    - ooicat
+    - tannel      
 
 port: 7890
 socks-port: 7891
@@ -29,6 +34,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 
+proxy-providers: *airports
 
 #节点添加到这里
 proxies: 
