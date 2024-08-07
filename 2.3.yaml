@@ -140,6 +140,7 @@ rules:
   - IP-CIDR,220.181.174.162/32,🚀 节点选择,no-resolve
   - IP-CIDR,220.181.174.226/32,🚀 节点选择,no-resolve
   - IP-CIDR,220.181.174.34/32,🚀 节点选择,no-resolve
+  - DOMAIN-SUFFIX,erp.pa0086.com,DIRECT  
   - DOMAIN-SUFFIX,acl4.ssr,DIRECT
   - DOMAIN-SUFFIX,ip6-localhost,DIRECT
   - DOMAIN-SUFFIX,ip6-loopback,DIRECT
