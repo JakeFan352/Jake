@@ -93,8 +93,17 @@ proxy-groups:
     use: *proxy-providers-use
     filter: (?i)俄罗斯|德国|法国|英国|意大利|西班牙|波兰|罗马尼亚|荷兰|比利时|捷克|希腊|葡萄牙|瑞典|匈牙利|奥地利|瑞士|保加利亚|丹麦|芬兰|斯洛伐克|爱尔兰|克罗地亚|立陶宛|拉脱维亚|爱沙尼亚|斯洛文尼亚|摩尔多瓦|冰岛|马耳他|安道尔|列支敦士登|摩纳哥|圣马力诺|梵蒂冈
 
-#TikTok设备中转&链式代理
 
+
+#0   
+  - name: 🏡 JNAS
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+
+#TikTok设备中转&链式代理
 #1   
   - name: 🎵 TK-158中转xs
     type: select
@@ -114,11 +123,12 @@ proxy-groups:
 
   
 rules:
-
+#自定规则1
 #设备ip和链式代理组名称
   - SRC-IP-CIDR,192.168.168.158/32,🎵 TK-158链式xs   #(这里填写设备ip和链式代理组名称）
   - SRC-IP-CIDR,192.168.168.159/32,🎵 TK-159链式Mi11
 
+  - SRC-IP-CIDR,192.168.168.167/32,🏡 JNAS
 
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 节点选择
   - DOMAIN-SUFFIX,services.googleapis.cn,🚀 节点选择
@@ -140,7 +150,7 @@ rules:
   - IP-CIDR,220.181.174.162/32,🚀 节点选择,no-resolve
   - IP-CIDR,220.181.174.226/32,🚀 节点选择,no-resolve
   - IP-CIDR,220.181.174.34/32,🚀 节点选择,no-resolve
-#自定规则  
+#自定规则2  
   - DOMAIN,erp.pa0086.com,DIRECT  #PA的ERP
   - DOMAIN-SUFFIX,oray.com,DIRECT  #向日葵
 
