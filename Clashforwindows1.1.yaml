@@ -77,7 +77,12 @@ proxy-groups:
     use: *proxy-providers-use
     filter: (?i)俄罗斯|德国|法国|英国|意大利|西班牙|波兰|罗马尼亚|荷兰|比利时|捷克|希腊|葡萄牙|瑞典|匈牙利|奥地利|瑞士|保加利亚|丹麦|芬兰|斯洛伐克|爱尔兰|克罗地亚|立陶宛|拉脱维亚|爱沙尼亚|斯洛文尼亚|摩尔多瓦|冰岛|马耳他|安道尔|列支敦士登|摩纳哥|圣马力诺|梵蒂冈
 
-
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
 
 
   
@@ -9532,4 +9537,4 @@ rules:
   - IP-CIDR,223.255.236.0/22,DIRECT,no-resolve
   - IP-CIDR,223.255.252.0/23,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🚀 节点选择
+  - MATCH,🐟 漏网之鱼
