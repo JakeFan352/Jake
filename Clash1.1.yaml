@@ -27,6 +27,10 @@ proxy-providers: *airports
 #节点添加到这里
 proxies: 
 
+#socks5节点,住宅地址ISP
+  - {"name":"188.191.99.223","server":"188.191.99.223","port":"2333","type":"socks5","username":"caonimadebi","password":"nimalegebi2","udp":true}
+  - {"name":"156.233.23.214","server":"156.233.23.214","port":"2333","type":"socks5","username":"caonimadebi","password":"nimalegebi2","udp":true}
+
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -84,12 +88,41 @@ proxy-groups:
       - 🚀 手动切换
       - DIRECT
 
+#0   
+  - name: 🏡 JNAS
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
 
+#TikTok设备中转&链式代理
+#1   
+  - name: 🎵 TK-158中转xs
+    type: select
+    use: *proxy-providers-use
+    filter: (?i)美国|香港|台湾|新加坡|日本
+    
+  - {name: 🎵 TK-158链式xs, type: relay, proxies: [🎵 TK-158中转xs, 188.191.99.223]}  
+
+#2,以此类推  
+  - name: 🎵 TK-159中转Mi11
+    type: select
+    use: *proxy-providers-use
+    filter: (?i)美国|香港|台湾|新加坡|日本
+    
+  - {name: 🎵 TK-159链式Mi11, type: relay, proxies: [🎵 TK-159中转Mi11, 156.233.23.214]}
   
 
   
 rules:
+#自定规则1
+#设备ip和链式代理组名称
+  - SRC-IP-CIDR,192.168.168.158/32,🎵 TK-158链式xs   #(这里填写设备ip和链式代理组名称）
+  - SRC-IP-CIDR,192.168.168.159/32,🎵 TK-159链式Mi11
 
+  - SRC-IP-CIDR,192.168.168.167/32,🏡 JNAS
+#结束1  
 
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 节点选择
   - DOMAIN-SUFFIX,services.googleapis.cn,🚀 节点选择
@@ -114,8 +147,9 @@ rules:
 #自定规则2  
   - DOMAIN,erp.pa0086.com,DIRECT  #PA的ERP
   - DOMAIN-SUFFIX,oray.com,DIRECT  #向日葵
-
-#结束
+  - DOMAIN-SUFFIX,orayimg.com,DIRECT  #向日葵  
+  - DOMAIN-SUFFIX,weiyun001.com,DIRECT  #维运
+#结束2
 
   - DOMAIN-SUFFIX,acl4.ssr,DIRECT
   - DOMAIN-SUFFIX,ip6-localhost,DIRECT
